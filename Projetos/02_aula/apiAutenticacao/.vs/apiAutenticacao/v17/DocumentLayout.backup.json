@@ -11,12 +11,12 @@
       "RelativeMoniker": "D:0:0:{3349B503-D1CC-4DF4-95B9-D45A5AC576D2}|apiAutenticacao.csproj|solutionrelative:models\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3349B503-D1CC-4DF4-95B9-D45A5AC576D2}|apiAutenticacao.csproj|c:\\users\\jose.fncarvalho1\\documents\\programa\\tds02-uc7\\projetos\\02_aula\\apiautenticacao\\models\\dto\\logindto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3349B503-D1CC-4DF4-95B9-D45A5AC576D2}|apiAutenticacao.csproj|solutionrelative:models\\dto\\logindto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{3349B503-D1CC-4DF4-95B9-D45A5AC576D2}|apiAutenticacao.csproj|c:\\users\\jose.fncarvalho1\\documents\\programa\\tds02-uc7\\projetos\\02_aula\\apiautenticacao\\models\\dto\\cadastrousuariodto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{3349B503-D1CC-4DF4-95B9-D45A5AC576D2}|apiAutenticacao.csproj|solutionrelative:models\\dto\\cadastrousuariodto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3349B503-D1CC-4DF4-95B9-D45A5AC576D2}|apiAutenticacao.csproj|c:\\users\\jose.fncarvalho1\\documents\\programa\\tds02-uc7\\projetos\\02_aula\\apiautenticacao\\models\\dto\\logindto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3349B503-D1CC-4DF4-95B9-D45A5AC576D2}|apiAutenticacao.csproj|solutionrelative:models\\dto\\logindto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,7 +30,7 @@
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 2,
               "Title": "CadastroUsuarioDTO.cs",
               "DocumentMoniker": "C:\\Users\\jose.fncarvalho1\\Documents\\programa\\TDS02-UC7\\Projetos\\02_aula\\apiAutenticacao\\Models\\DTO\\CadastroUsuarioDTO.cs",
               "RelativeDocumentMoniker": "Models\\DTO\\CadastroUsuarioDTO.cs",
@@ -43,7 +43,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "LoginDTO.cs",
               "DocumentMoniker": "C:\\Users\\jose.fncarvalho1\\Documents\\programa\\TDS02-UC7\\Projetos\\02_aula\\apiAutenticacao\\Models\\DTO\\LoginDTO.cs",
               "RelativeDocumentMoniker": "Models\\DTO\\LoginDTO.cs",
@@ -62,7 +62,7 @@
               "RelativeDocumentMoniker": "Models\\Usuario.cs",
               "ToolTip": "C:\\Users\\jose.fncarvalho1\\Documents\\programa\\TDS02-UC7\\Projetos\\02_aula\\apiAutenticacao\\Models\\Usuario.cs",
               "RelativeToolTip": "Models\\Usuario.cs",
-              "ViewState": "AgIAAAoAAAAAAAAAAAAgwAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-11-25T00:04:36.179Z",
               "EditorCaption": ""
@@ -75,7 +75,7 @@
               "RelativeDocumentMoniker": "Controllers\\UsuariosController.cs",
               "ToolTip": "C:\\Users\\jose.fncarvalho1\\Documents\\programa\\TDS02-UC7\\Projetos\\02_aula\\apiAutenticacao\\Controllers\\UsuariosController.cs",
               "RelativeToolTip": "Controllers\\UsuariosController.cs",
-              "ViewState": "AgIAADYAAAAAAAAAAAAowEAAAAAbAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-11-14T23:08:48.343Z",
               "EditorCaption": ""
