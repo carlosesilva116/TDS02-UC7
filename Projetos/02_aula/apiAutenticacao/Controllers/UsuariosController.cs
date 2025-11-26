@@ -5,6 +5,8 @@ using apiAutenticacao.Data;
 using Microsoft.EntityFrameworkCore;
 using static BCrypt.Net.BCrypt;
 using apiAutenticacao.Models.DTO;
+using apiAutenticacao.Services;
+using apiAutenticacao.Models.Response;
 
 namespace apiAutenticacao.Controllers
 {
@@ -13,11 +15,13 @@ namespace apiAutenticacao.Controllers
     public class UsuariosController : ControllerBase
     {
         private readonly AppDbContext _context;
+        private readonly AuthService _authService;
 
-        public UsuariosController(AppDbContext context)
+        public UsuariosController(AppDbContext context, AuthService authService)
         {
 
             _context = context;
+            _authService = authService;
         }
 
         [HttpPost("cadastrar")]
@@ -70,24 +74,15 @@ namespace apiAutenticacao.Controllers
                 return BadRequest(ModelState);
             }
 
-            Usuario? usuarioEncontrado = await _context.Usuarios.FirstOrDefaultAsync(usuario => usuario.Email == dadosUsuario.Email);
+            ResponseLogin response = await _authService.Login(dadosUsuario);
 
-            if (usuarioEncontrado != null)
+            if (response.Erro)
             {
-                // Verifica se a senha fornecida corresponde à senha armazenada 
-                bool isValidPassword = Verify(dadosUsuario.Senha, usuarioEncontrado.Senha);
-
-                if (isValidPassword)
-                {
-                    return Ok("Login realizado com sucesso");
-                }
-
-                return Unauthorized("Email ou senha incorretos");
-
-
+                return BadRequest( response.Mensagem );
             }
+            return Ok(response );
 
-            return NotFound("Usuário não encontrado!");
+
         }
 
 
