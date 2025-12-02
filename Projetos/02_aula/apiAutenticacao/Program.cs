@@ -1,4 +1,5 @@
 using apiAutenticacao.Data;
+using apiAutenticacao.Services;
 using Microsoft.EntityFrameworkCore;
 using Scalar.AspNetCore;
 
@@ -9,6 +10,13 @@ namespace apiAutenticacao
         public static void Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
+
+            // registração do serviço AuthService para injeção de dependência
+            // em modo scoped, ou seja, uma nova instância será criada para cada requisição HTTP
+            // imbernado.
+            builder.Services.AddScoped<AuthService>();
+
+
 
             // Add services to the container.
 

@@ -14,55 +14,32 @@ namespace apiAutenticacao.Controllers
     [ApiController]
     public class UsuariosController : ControllerBase
     {
-        private readonly AppDbContext _context;
         private readonly AuthService _authService;
 
-        public UsuariosController(AppDbContext context, AuthService authService)
+        public UsuariosController(AuthService authService )
         {
 
-            _context = context;
             _authService = authService;
         }
 
         [HttpPost("cadastrar")]
-        public async Task<IActionResult> CadastarUsuariosAsync([FromBody] CadastroUsuarioDTO dadosUsuario)
-        {
+        public async Task<IActionResult> CadastarUsuariosAsync
+            ([FromBody] CadastroUsuarioDTO dadosUsuario){
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            Usuario? usuarioExistente = await _context.Usuarios.FirstOrDefaultAsync(u => u.Email == dadosUsuario.Email);
+            ResponseCadastro response = await _authService.CadastrarUsuarioAsync(dadosUsuario);
 
-            if (usuarioExistente != null)
+            if (response.Erro)
             {
-                return BadRequest(new { Erro = true, messangem = "Já existe um usuário cadastrado com esse email." });
+                return BadRequest(response);
             }
 
-            Usuario usuario = new Usuario
-            {
-                Nome = dadosUsuario.Nome,
-                Email = dadosUsuario.Email,
-                Senha = HashPassword(dadosUsuario.Senha),
-                ConfirmacaoSenha = HashPassword(dadosUsuario.ConfirmacaoSenha)
-            };
+            return Ok(response);
 
-            _context.Usuarios.Add(usuario);
-            await _context.SaveChangesAsync();
 
-            return Ok(new
-            {
-                erro = false,
-                mensagem = "Usuário cadastrado com sucesso",
-                usuario = new
-
-                {
-                    id = usuario.Id,
-                    nome = usuario.Nome,
-                    email = usuario.Email
-                }
-            })
-            ;
 
         }
 
@@ -85,6 +62,22 @@ namespace apiAutenticacao.Controllers
 
         }
 
+
+        [HttpPut("AlterarSenha")]
+
+        public async Task<IActionResult> AlterarSenha([FromBody] AlterarSenhaDTO dadosAlterarSenha)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+            ResponseAlteraSenha response = await _authService.AlterarSenhaAsync(dadosAlterarSenha);
+            if (response.Erro)
+            {
+                return BadRequest(response);
+            }
+            return Ok(response);
+        }
 
 
 
