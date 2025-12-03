@@ -1,4 +1,4 @@
-# TDS02-UC6: Desenvolver interface de usuário e usabilidade de aplicação desktop
+# TDS02-UC6: Desenvolver backend  de aplicação desktop
 
 CARGA HORÁRIA: 96 HORAS
 
