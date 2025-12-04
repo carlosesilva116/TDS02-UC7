@@ -142,6 +142,42 @@ namespace apiAutenticacao.Services
 
         }
 
+        public async Task<ResponseAlterarEmail> AlterarEmailAsync
+            (AlterarEmailDTO dadosAlterarEmail)
+        {
+            Usuario? usuario = await _context.Usuarios
+                .FirstOrDefaultAsync(u => u.Email == dadosAlterarEmail.EmailAtual);
+            if (usuario == null)
+            {
+                return new ResponseAlterarEmail
+                {
+                    Erro = true,
+                    Message = "Email atual não encontrado."
+                };
+            }
+            Usuario? emailExistente = await _context.Usuarios
+                .FirstOrDefaultAsync(u => u.Email == dadosAlterarEmail.NovoEmail);
+            if (emailExistente != null)
+            {
+                return new ResponseAlterarEmail
+                {
+                    Erro = true,
+                    Message = "O novo email já está em uso."
+                };
+            }
+            usuario.Email = dadosAlterarEmail.NovoEmail;
+            await _context.SaveChangesAsync();
+            return new ResponseAlterarEmail
+            {
+                Erro = false,
+                Message = "Email alterado com sucesso!"
+            };
+            {
+                
+            }
+        }
+
+
     }
 
 }

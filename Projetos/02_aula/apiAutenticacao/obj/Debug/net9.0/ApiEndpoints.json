@@ -1,6 +1,22 @@
 [
   {
     "ContainingType": "apiAutenticacao.Controllers.UsuariosController",
+    "Method": "AlterarEmail",
+    "RelativePath": "api/Usuarios/AlterarEmail",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dadosAlterarEmail",
+        "Type": "apiAutenticacao.Models.DTO.AlterarEmailDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "apiAutenticacao.Controllers.UsuariosController",
     "Method": "AlterarSenha",
     "RelativePath": "api/Usuarios/AlterarSenha",
     "HttpMethod": "PUT",
