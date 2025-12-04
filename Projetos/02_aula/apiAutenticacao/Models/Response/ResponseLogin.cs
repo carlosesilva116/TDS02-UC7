@@ -1,14 +1,11 @@
 ﻿
+using apiAutenticacao.Models.DTO;
+
 namespace apiAutenticacao.Models.Response
 {
-    public class ResponseLogin
+    public class ResponseLogin : ResponseDTO
     {
-        public bool Erro { get; set; }
-
-        public string Mensagem { get; set; } = string.Empty;
-
-        public Usuario? Usuario { get; set; }
-
+        
 
     }
 }

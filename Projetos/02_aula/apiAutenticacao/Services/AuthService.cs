@@ -38,7 +38,7 @@ namespace apiAutenticacao.Services
                     return new ResponseLogin
                     {
                         Erro = false,
-                        Mensagem = "Login realizado com sucesso",
+                        Message = "Login realizado com sucesso",
                         Usuario = usuarioEncontrado
                     };
 
@@ -47,7 +47,7 @@ namespace apiAutenticacao.Services
                 return new ResponseLogin
                 {
                     Erro = true,
-                    Mensagem = "Login não realizado. Email ou senha incorretos",
+                    Message = "Login não realizado. Email ou senha incorretos",
                     Usuario = null
                 };
 
@@ -59,7 +59,7 @@ namespace apiAutenticacao.Services
             return new ResponseLogin
             {
                 Erro = true,
-                Mensagem = "Usuário não encontrado!",
+                Message = "Usuário não encontrado!",
             };
 
 
@@ -86,7 +86,6 @@ namespace apiAutenticacao.Services
                 Nome = dadosUsuarioCadastro.Nome,
                 Email = dadosUsuarioCadastro.Email,
                 Senha = HashPassword(dadosUsuarioCadastro.Senha),
-                ConfirmacaoSenha = HashPassword(dadosUsuarioCadastro.ConfirmacaoSenha)
             };
 
             _context.Usuarios.Add(usuario);
@@ -130,7 +129,6 @@ namespace apiAutenticacao.Services
 
             usuario.Senha = HashPassword(dadosAlterarSenha.NovaSenha);
 
-            usuario.ConfirmacaoSenha = HashPassword(dadosAlterarSenha.NovaSenha);
 
             //_context.Usuarios.Update(usuario);
             await _context.SaveChangesAsync();

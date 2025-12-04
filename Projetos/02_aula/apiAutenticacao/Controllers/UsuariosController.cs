@@ -55,7 +55,7 @@ namespace apiAutenticacao.Controllers
 
             if (response.Erro)
             {
-                return BadRequest( response.Mensagem );
+                return BadRequest( response.Message );
             }
             return Ok(response );
 
